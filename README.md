@@ -12,4 +12,4 @@ https://jcarlos8.github.io/password_generator/
 
 
 
-![password generator](/Password%20Generator/assets/Pwd%20Generator.png)
+![password generator](/assets/Pwd%20Generator.png)
