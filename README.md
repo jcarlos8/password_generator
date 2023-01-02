@@ -8,6 +8,8 @@ This application allows you to generate a random password with 10 to 64 characte
 
 To access this application you must follow this link:
 
+https://jcarlos8.github.io/password_generator/
+
 
 
 ![password generator](/Password%20Generator/assets/Pwd%20Generator.png)
