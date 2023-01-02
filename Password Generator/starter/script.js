@@ -86,7 +86,7 @@ var upperCasedCharacters = [
   'X',
   'Y',
   'Z'
-];
+];~~
 
 // Function to prompt user for password options
 
