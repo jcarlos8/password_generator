@@ -88,73 +88,62 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-
-
 // Function to prompt user for password options
-
-function getPasswordOptions() {
-  
-// Loop to check password length meets requirement and concatenates user options to available characters
-// Using the parseInt method to parse string and return a whole number
-
-var length = parseInt(prompt('Please select the length for your password. It must have at least 10 characters and no more than 64.'));
-
-while (length < 10 || length > 64) {
-
-  alert('Your password must be between 10 and 64 characters!');
-}
-
-var lower = confirm('Would you like to add Lowercase characters?');
-
-if (lower) {
-  random = random.concat(lowerCasedCharacters);
-}
-
-var upper = confirm('Would you like to add Uppercase characters?');
-
- if (upper) {
-  random = random.concat(upperCasedCharacters);
-}
-
-var numeric = confirm('Would you like to add Numeric characters?');
-
- if (numeric) {
-  random = random.concat(numericCharacters);
-}
-
-var special = confirm('Would you like to add special characters ($@%&*, etc)');
-
- if (special) {
-  random = random.concat(specialCharacters);
-}
-
-
-
-}
-
-getPasswordOptions();
-
-
-
 
 function generatePassword() {
 
 
-  var finalPassword = "";
-  
-    for (var i = 0; i < length; i++) {
-      var pwd = Math.floor(Math.random() * random.length);
-      
-      finalPassword = finalPassword + random[pwd];
-    };
-  
-  console.log(finalPassword);
-  
-  }
+var length = parseInt(prompt('Please select the length for your password. It must have at least 10 characters and no more than 64.'));
 
-// Function for getting a random element from an array
-// Function to generate password with user input
+// Loop to check password length meets requirement and concatenates user options to available characters
 
+while (length <= 10 || length >= 64) {
+
+  alert('Your password must be between 10 and 64 characters!');
+  var length = (prompt("Please select the length for your password. It must have at least 10 characters and no more than 64."));
+}
+
+var lower = confirm('Would you like to add Lowercase characters?');
+
+var upper = confirm('Would you like to add Uppercase characters?');
+
+var numeric = confirm('Would you like to add Numeric characters?');
+
+var special = confirm('Would you like to add special characters ($@%&*, etc)');
+
+// Empty variable to customize password according to the user's choice
+
+var chars = [];
+
+if (lower) {
+  chars = chars.concat(lowerCasedCharacters)
+}
+
+if (upper) {
+  chars = chars.concat(upperCasedCharacters)
+}
+
+if (numeric) {
+  chars = chars.concat(numericCharacters)
+}
+
+if (special) {
+  chars = chars.concat(specialCharacters)
+}
+
+console.log(chars);
+
+
+var randomPwd = [];
+
+for (var i = 0; i < length; i++) {
+  randomPwd = randomPwd + chars[Math.floor(Math.random() * chars.length)];
+  console.log(randomPwd)
+}
+
+return randomPwd;
+
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
